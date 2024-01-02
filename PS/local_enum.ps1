@@ -18,3 +18,5 @@ Get-NetIPAddress | Format-Table
 
 net user
 net localgroup
+
+Write-Host "-----------------------------------------------"
