@@ -1,2 +1,4 @@
+param($ip_subnet, $ip_range)
+
 $ping = New-Object System.Net.NetworkInformation.Ping
-"192.168.55.1", "192.168.55.100" | ForEach-Object {$ping.Send($_)} | Select-Object Address, Status
+$ip_range | ForEach-Object {$ping.Send("$ip_subnet$_",1000)} | Select-Object Address, Status 
