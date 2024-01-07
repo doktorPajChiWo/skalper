@@ -1,0 +1,1 @@
+Get-ChildItem C:\ -Recurse | Select-String -Pattern 'Begin EX PRIVATE KEY', '(;|)(?i)\bpassword\b( |)=( |)'
