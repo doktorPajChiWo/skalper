@@ -1,0 +1,1 @@
+Get-ChildItem C:\ -Recurse -Include *.exe,*.ps1,*.dll -ErrorAction SilentlyContinue | Get-Acl | Out-String -stream | Select-String -Pattern "Użytkownicy Allow  Full"
