@@ -15,6 +15,6 @@ def handle_ping(pkt):
         except:
             pass
 if __name__=="__main__":
-    iface = "enp1s0"
+    iface = "eth0"
     filter = "icmp and icmp[0]=8"
     sniff(iface=iface, prn=handle_ping, filter=filter)
