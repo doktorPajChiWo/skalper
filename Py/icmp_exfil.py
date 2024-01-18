@@ -6,7 +6,7 @@ from scapy.all import *
 
 def handle_load(load):
     try:
-        return "c:" + open("./data/%s" % load,"r").read().strip()
+        return "c:" + open("./data/%s" %load,"r").read().strip()
     except:
         return 
 
